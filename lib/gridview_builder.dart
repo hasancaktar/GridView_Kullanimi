@@ -9,17 +9,34 @@ class BuildOrnek extends StatelessWidget {
     return GridView.builder(
       itemCount: 55,
       gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          
-          alignment: Alignment.center,
-          color: Colors.blue[100 * ((index) % 8)],
-          child: Text(
-            "HASANCAKTAR $index",
-            textAlign: TextAlign.center,
-          ),
-        );
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [BoxShadow(color: Colors.grey, offset:  Offset(10, 8), blurRadius: 2, spreadRadius: 0),],
+              //  borderRadius: BorderRadius.all(Radius.circular(20)),
+                border: Border.all(color: Colors.indigoAccent, width: 4),
+                color: Colors.red[100 * ((index) % 8)],
+                gradient: LinearGradient(
+                    colors: [Colors.yellow, Colors.red],
+                    
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter),
+                image: DecorationImage(
+                    image: AssetImage("assets/a.jpg"),
+                    fit: BoxFit.contain,
+                    alignment: Alignment.topCenter)),
+            margin: EdgeInsets.all(15),
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(
+                "HASANCAKTAR $index",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 15),
+              ),
+            ));
       },
     );
   }

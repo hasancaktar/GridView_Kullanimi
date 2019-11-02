@@ -14,7 +14,7 @@ void main() {
       appBar: AppBar(
         title: Text("Listeler"),
       ),
-      body: GridViewOrnek(),
+      body: BuildOrnek(),
     ),
   ));
 }
