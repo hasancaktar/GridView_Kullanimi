@@ -4,17 +4,16 @@ import 'package:liste/liste.dart';
 import 'package:liste/gridview.dart';
 import 'package:liste/gridview_extent.dart';
 
+import 'customscrollview.dart';
 import 'gridview_builder.dart';
 
 void main() {
   runApp(MaterialApp(
-    theme: ThemeData(primarySwatch: Colors.green),
-    title: "Liste",
+    title: "Flutter dersleri",
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(primarySwatch: Colors.green, brightness: Brightness.dark),
     home: Scaffold(
-      appBar: AppBar(
-        title: Text("Listeler"),
-      ),
-      body: BuildOrnek(),
+      body: CustomScrolViewOrnek(),
     ),
   ));
 }
